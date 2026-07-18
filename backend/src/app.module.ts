@@ -4,6 +4,10 @@ import { AppService } from './app.service';
 import { AutoresModule } from './autores/autores.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CategoriasModule } from './categorias/categorias.module';
+import { ClientesModule } from './clientes/clientes.module';
+import { TrabajadoresModule } from './trabajadores/trabajadores.module';
+import { LibrosModule } from './libros/libros.module';
 
 @Module({
   imports: [
@@ -20,6 +24,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
     }),
     AutoresModule,
+    CategoriasModule,
+    ClientesModule,
+    TrabajadoresModule,
+    LibrosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

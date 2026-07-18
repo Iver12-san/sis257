@@ -12,7 +12,6 @@ export class AutoresService {
     let autore = await this.autoresRepository.findOneBy({
       nombre: createAutoreDto.nombre,
       apellido: createAutoreDto.apellido,
-      nacionalidad: createAutoreDto.nacionalidad,
     });
     if (autore) throw new ConflictException('El autor ya existe');
     autore = new Autore();
