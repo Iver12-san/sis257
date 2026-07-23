@@ -1,8 +1,10 @@
+import { Libro } from 'src/libros/entities/libro.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -29,4 +31,7 @@ export class Autore {
 
   @DeleteDateColumn({ name: 'fecha_eliminacaion' })
   fechaEliminacion: Date;
+
+  @OneToMany(() => Libro, libro => libro.autore)
+  libros: Libro[];
 }
